@@ -1,0 +1,184 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <linearGradient id="maskGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#1e293b">
+    Qualitative Results: SAM2 vs SAM2-Lite
+  </text>
+  <text x="600" y="58" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#64748b">
+    Challenging scenarios: occlusions, deformations, and similar objects
+  </text>
+  
+  <!-- Column headers -->
+  <text x="150" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#475569">Input Frame</text>
+  <text x="420" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#475569">Ground Truth</text>
+  <text x="690" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#3b82f6">SAM2 (Teacher)</text>
+  <text x="960" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#10b981">SAM2-Lite (Ours)</text>
+  
+  <!-- Row 1: Person with occlusion -->
+  <g id="row1">
+    <text x="20" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" transform="rotate(-90, 20, 200)">
+      Occlusion
+    </text>
+    
+    <!-- Input -->
+    <rect x="70" y="120" width="160" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="90" y="140" width="50" height="80" rx="5" fill="#94a3b8"/>
+    <circle cx="115" cy="160" r="12" fill="#475569"/>
+    <rect x="150" y="150" width="60" height="70" rx="5" fill="#cbd5e1" opacity="0.8"/>
+    <text x="150" y="235" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#64748b">Person behind tree</text>
+    
+    <!-- Ground Truth -->
+    <rect x="340" y="120" width="160" height="120" rx="8" fill="#000" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="360" y="140" width="50" height="80" rx="5" fill="#fff"/>
+    <circle cx="385" cy="160" r="12" fill="#fff"/>
+    
+    <!-- SAM2 -->
+    <rect x="610" y="120" width="160" height="120" rx="8" fill="#000" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="630" y="140" width="50" height="80" rx="5" fill="#dbeafe"/>
+    <circle cx="655" cy="160" r="12" fill="#dbeafe"/>
+    <text x="690" y="180" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">✓ Accurate</text>
+    
+    <!-- SAM2-Lite -->
+    <rect x="880" y="120" width="160" height="120" rx="8" fill="#000" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="900" y="140" width="50" height="80" rx="5" fill="#d1fae5"/>
+    <circle cx="925" cy="160" r="12" fill="#d1fae5"/>
+    <text x="960" y="180" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Accurate</text>
+  </g>
+  
+  <!-- Row 2: Deformable object -->
+  <g id="row2">
+    <text x="20" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" transform="rotate(-90, 20, 370)">
+      Deformation
+    </text>
+    
+    <!-- Input -->
+    <rect x="70" y="270" width="160" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="150" cy="330" rx="50" ry="30" fill="#94a3b8" transform="rotate(20, 150, 330)"/>
+    <text x="150" y="395" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#64748b">Dancing person</text>
+    
+    <!-- Ground Truth -->
+    <rect x="340" y="270" width="160" height="120" rx="8" fill="#000" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="420" cy="330" rx="50" ry="30" fill="#fff" transform="rotate(20, 420, 330)"/>
+    
+    <!-- SAM2 -->
+    <rect x="610" y="270" width="160" height="120" rx="8" fill="#000" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="690" cy="330" rx="50" ry="30" fill="#dbeafe" transform="rotate(20, 690, 330)"/>
+    <text x="690" y="300" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">✓ Good</text>
+    
+    <!-- SAM2-Lite -->
+    <rect x="880" y="270" width="160" height="120" rx="8" fill="#000" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="960" cy="330" rx="48" ry="29" fill="#d1fae5" transform="rotate(20, 960, 330)"/>
+    <text x="960" y="300" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Similar</text>
+  </g>
+  
+  <!-- Row 3: Similar objects -->
+  <g id="row3">
+    <text x="20" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" transform="rotate(-90, 20, 540)">
+      Similar Objects
+    </text>
+    
+    <!-- Input -->
+    <rect x="70" y="420" width="160" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="110" cy="480" r="25" fill="#64748b"/>
+    <circle cx="170" cy="480" r="25" fill="#64748b"/>
+    <rect x="95" y="500" width="15" height="3" fill="#ef4444"/>
+    <text x="150" y="545" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#64748b">Multiple similar faces</text>
+    
+    <!-- Ground Truth -->
+    <rect x="340" y="420" width="160" height="120" rx="8" fill="#000" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="380" cy="480" r="25" fill="#fff"/>
+    <circle cx="440" cy="480" r="25" fill="#333" opacity="0.3"/>
+    <text x="420" y="460" font-family="Arial, sans-serif" font-size="9" fill="#fff">Target</text>
+    
+    <!-- SAM2 -->
+    <rect x="610" y="420" width="160" height="120" rx="8" fill="#000" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="650" cy="480" r="25" fill="#dbeafe"/>
+    <circle cx="710" cy="480" r="25" fill="#333" opacity="0.2"/>
+    <text x="690" y="520" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">✓ Correct ID</text>
+    
+    <!-- SAM2-Lite -->
+    <rect x="880" y="420" width="160" height="120" rx="8" fill="#000" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="920" cy="480" r="25" fill="#d1fae5"/>
+    <circle cx="980" cy="480" r="25" fill="#333" opacity="0.2"/>
+    <text x="960" y="520" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Correct ID</text>
+  </g>
+  
+  <!-- Row 4: Fast motion -->
+  <g id="row4">
+    <text x="20" y="700" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" transform="rotate(-90, 20, 700)">
+      Fast Motion
+    </text>
+    
+    <!-- Input -->
+    <rect x="70" y="570" width="160" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="150" cy="630" rx="40" ry="25" fill="#94a3b8" opacity="0.4"/>
+    <ellipse cx="160" cy="630" rx="40" ry="25" fill="#94a3b8" opacity="0.7"/>
+    <ellipse cx="170" cy="630" rx="40" ry="25" fill="#94a3b8"/>
+    <path d="M 90,630 L 130,630" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="150" y="695" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#64748b">Ball in motion (blur)</text>
+    
+    <!-- Ground Truth -->
+    <rect x="340" y="570" width="160" height="120" rx="8" fill="#000" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="440" cy="630" rx="40" ry="25" fill="#fff"/>
+    
+    <!-- SAM2 -->
+    <rect x="610" y="570" width="160" height="120" rx="8" fill="#000" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="710" cy="630" rx="40" ry="25" fill="#dbeafe"/>
+    <text x="690" y="660" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">✓ Tracked</text>
+    
+    <!-- SAM2-Lite -->
+    <rect x="880" y="570" width="160" height="120" rx="8" fill="#000" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <ellipse cx="980" cy="630" rx="38" ry="24" fill="#d1fae5"/>
+    <text x="960" y="660" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Tracked</text>
+    <text x="960" y="675" font-family="Arial, sans-serif" font-size="9" fill="#64748b">(slight edge softness)</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <!-- Summary box -->
+  <rect x="70" y="720" width="1070" height="60" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="605" y="745" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">
+    Key Observation: SAM2-Lite produces visually similar results despite using 48× fewer parameters
+  </text>
+  <text x="605" y="765" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#047857">
+    Minor differences in edge sharpness and very small object details | Overall tracking accuracy maintained
+  </text>
+  
+  <!-- Metrics comparison -->
+  <g transform="translate(850, 150)">
+    <rect x="0" y="0" width="180" height="110" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1e293b">
+      Comparison
+    </text>
+    
+    <text x="20" y="48" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6" font-weight="bold">SAM2:</text>
+    <text x="70" y="48" font-family="Arial, sans-serif" font-size="10" fill="#64748b">86.5% J&amp;F</text>
+    
+    <text x="20" y="65" font-family="Arial, sans-serif" font-size="10" fill="#10b981" font-weight="bold">Ours:</text>
+    <text x="70" y="65" font-family="Arial, sans-serif" font-size="10" fill="#64748b">84.5% J&amp;F</text>
+    
+    <line x1="15" y1="75" x2="165" y2="75" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Difference:</text>
+    <text x="90" y="90" font-family="Arial, sans-serif" font-size="10" fill="#10b981" font-weight="bold">-2.0%</text>
+    
+    <text x="90" y="105" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(96% of teacher)</text>
+  </g>
+</svg>

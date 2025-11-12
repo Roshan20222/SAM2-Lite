@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SAM2-Lite: Bringing Real-Time Video Segmentation to Edge Devices Through Memory-Aware Knowledge Distillation</h1>
+        <p>Roshan Pandey<br>Department of Computer Science, Tribhuvan University, Kathmandu, Nepal</p>
+    </header>
+    <main>
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <p>Getting state-of-the-art video segmentation models to run on edge devices like smartphones and drones remains a fundamental challenge in computer vision. While models like SAM2 deliver impressive results, they require powerful GPUs and consume substantial energy, making them impractical for resource-constrained devices. We present SAM2-Lite, a family of lightweight video segmentation models designed specifically for real-time inference on edge hardware through memory-aware knowledge distillation.</p><p>Our approach is built on three key innovations. First, we introduce memory-aware distillation that teaches the student model not just to match the teacher's outputs, but to replicate its temporal reasoning by matching attention distributions and memory readouts. Second, we develop a learned memory pruning mechanism that intelligently selects which frame features to retain within strict device memory budgets. Third, we implement an adaptive inference system that dynamically adjusts resolution and memory usage based on real-time device performance.</p><p>Trained on YouTube-VOS, DAVIS, and other video datasets, SAM2-Lite\ achieves 83.1\% J\&F score on DAVIS 2017 (96\% of SAM2's performance) while operating 6.5× faster with 48× fewer parameters. On NVIDIA Jetson edge devices, it processes frames in 20-35 milliseconds and consumes less than 1.3 watt-hours of energy for a 10-minute video, enabling hours of continuous operation on battery power. We release all code, trained models, and deployment tools at \url{https://github.com/Roshan20222}.</p>
+        </section>
+        <section id="graphical-abstract">
+            <h2>Graphical Abstract</h2>
+            <img src="../graphical_abstract_svg.svg" alt="Graphical Abstract">
+        </section>
+        <section id="figures">
+            <h2>Figures</h2>
+            <div class="figure-gallery">
+                <figure>
+                    <img src="../drift_analysis_figure.svg" alt="Drift Analysis">
+                    <figcaption>Drift Analysis</figcaption>
+                </figure>
+                <figure>
+                    <img src="../energy_pareto_figure.svg" alt="Energy Pareto">
+                    <figcaption>Energy Pareto</figcaption>
+                </figure>
+                <figure>
+                    <img src="../memory_analysis_figure.svg" alt="Memory Analysis">
+                    <figcaption>Memory Analysis</figcaption>
+                </figure>
+                <figure>
+                    <img src="../qualitative_results_figure.svg" alt="Qualitative Results">
+                    <figcaption>Qualitative Results</figcaption>
+                </figure>
+            </div>
+            <p><strong>Note:</strong> The PDF figures in the <code>figures</code> directory need to be converted to a web-friendly format (like PNG or JPG) to be displayed here.</p>
+        </section>
+        <section id="downloads">
+            <h2>Downloads</h2>
+            <ul>
+                <li><a href="paper.pdf">Paper PDF</a></li>
+            </ul>
+        </section>
+        <section id="citation">
+            <h2>Citation</h2>
+            <pre><code>@article{pandey2024sam2lite,
+  title={SAM2-Lite: Bringing Real-Time Video Segmentation to Edge Devices Through Memory-Aware Knowledge Distillation},
+  author={Pandey, Roshan},
+  journal={arXiv preprint},
+  year={2024}
+}</code></pre>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

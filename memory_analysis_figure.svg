@@ -1,0 +1,213 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#bg)"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e293b">
+    Learned Memory Pruning: Which Frames Does SAM2-Lite Keep?
+  </text>
+  
+  <!-- Video timeline representation -->
+  <g transform="translate(50, 70)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">
+      Example 60-frame sequence (2 seconds @ 30fps)
+    </text>
+    
+    <!-- Timeline -->
+    <rect x="0" y="20" width="800" height="80" rx="8" fill="white" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- All frames (light) -->
+    <g opacity="0.3">
+      <rect x="10" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="25" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="40" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="55" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="70" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="85" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="100" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="115" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="130" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="145" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="160" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="175" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="190" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="205" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="220" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="235" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="250" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="265" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="280" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="295" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="310" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="325" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="340" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="355" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="370" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="385" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="400" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="415" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="430" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+      <rect x="445" y="30" width="10" height="60" rx="2" fill="#94a3b8"/>
+    </g>
+    
+    <!-- Kept frames (highlighted) -->
+    <!-- Anchor frame (frame 1) -->
+    <rect x="10" y="30" width="10" height="60" rx="2" fill="#ef4444" filter="url(#shadow)"/>
+    <text x="15" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#ef4444" font-weight="bold">1</text>
+    
+    <!-- Appearance change frames -->
+    <rect x="145" y="30" width="10" height="60" rx="2" fill="#f59e0b" filter="url(#shadow)"/>
+    <text x="150" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#f59e0b" font-weight="bold">10</text>
+    
+    <rect x="280" y="30" width="10" height="60" rx="2" fill="#f59e0b" filter="url(#shadow)"/>
+    <text x="285" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#f59e0b" font-weight="bold">19</text>
+    
+    <rect x="385" y="30" width="10" height="60" rx="2" fill="#f59e0b" filter="url(#shadow)"/>
+    <text x="390" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#f59e0b" font-weight="bold">27</text>
+    
+    <!-- Recent frames -->
+    <rect x="655" y="30" width="10" height="60" rx="2" fill="#10b981" filter="url(#shadow)"/>
+    <text x="660" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#10b981" font-weight="bold">54</text>
+    
+    <rect x="700" y="30" width="10" height="60" rx="2" fill="#10b981" filter="url(#shadow)"/>
+    <text x="705" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#10b981" font-weight="bold">57</text>
+    
+    <rect x="745" y="30" width="10" height="60" rx="2" fill="#10b981" filter="url(#shadow)"/>
+    <text x="750" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#10b981" font-weight="bold">59</text>
+    
+    <rect x="775" y="30" width="10" height="60" rx="2" fill="#10b981" filter="url(#shadow)"/>
+    <text x="780" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#10b981" font-weight="bold">60</text>
+    
+    <!-- Timeline labels -->
+    <text x="0" y="130" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Frame 1</text>
+    <text x="770" y="130" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#64748b">Frame 60</text>
+    <text x="400" y="130" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#64748b">(Current frame)</text>
+  </g>
+  
+  <!-- Strategy breakdown -->
+  <g transform="translate(50, 230)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">
+      Learned Memory Selection Strategy
+    </text>
+    
+    <!-- Strategy 1: Anchor frames -->
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="800" height="80" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="10" y="10" width="60" height="60" rx="5" fill="#fef2f2"/>
+      <rect x="20" y="20" width="40" height="40" rx="3" fill="#ef4444"/>
+      
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">
+        1. Anchor Frames (Always Keep)
+      </text>
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • First 1-2 frames serve as reference templates
+      </text>
+      <text x="90" y="68" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • Critical for long-term identity tracking
+      </text>
+      
+      <rect x="650" y="20" width="120" height="40" rx="5" fill="#fee2e2"/>
+      <text x="710" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#991b1b">
+        ~2 frames
+      </text>
+      <text x="710" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#991b1b">
+        (3-5% budget)
+      </text>
+    </g>
+    
+    <!-- Strategy 2: Appearance changes -->
+    <g transform="translate(0, 125)">
+      <rect x="0" y="0" width="800" height="80" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="10" y="10" width="60" height="60" rx="5" fill="#fef3c7"/>
+      <rect x="20" y="20" width="40" height="40" rx="3" fill="#f59e0b"/>
+      
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">
+        2. Appearance Change Points (High Priority)
+      </text>
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • Frames with object rotations, occlusions, or lighting shifts
+      </text>
+      <text x="90" y="68" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • High motion magnitude and prediction uncertainty
+      </text>
+      
+      <rect x="650" y="20" width="120" height="40" rx="5" fill="#fef3c7"/>
+      <text x="710" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#92400e">
+        ~5-8 frames
+      </text>
+      <text x="710" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#92400e">
+        (15-25% budget)
+      </text>
+    </g>
+    
+    <!-- Strategy 3: Recent frames -->
+    <g transform="translate(0, 220)">
+      <rect x="0" y="0" width="800" height="80" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="10" y="10" width="60" height="60" rx="5" fill="#d1fae5"/>
+      <rect x="20" y="20" width="40" height="40" rx="3" fill="#10b981"/>
+      
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">
+        3. Recent Context Window (Temporal Smoothness)
+      </text>
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • Last 2-4 frames for smooth tracking transitions
+      </text>
+      <text x="90" y="68" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • Ensures temporal consistency between predictions
+      </text>
+      
+      <rect x="650" y="20" width="120" height="40" rx="5" fill="#d1fae5"/>
+      <text x="710" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">
+        ~3-4 frames
+      </text>
+      <text x="710" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#065f46">
+        (8-12% budget)
+      </text>
+    </g>
+    
+    <!-- Strategy 4: Discarded frames -->
+    <g transform="translate(0, 315)">
+      <rect x="0" y="0" width="800" height="80" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="10" y="10" width="60" height="60" rx="5" fill="#f1f5f9"/>
+      <rect x="20" y="20" width="40" height="40" rx="3" fill="#94a3b8" opacity="0.5"/>
+      <line x1="20" y1="60" x2="60" y2="20" stroke="#ef4444" stroke-width="3"/>
+      
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">
+        4. Redundant Frames (Discarded)
+      </text>
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • Static object appearance with minimal changes
+      </text>
+      <text x="90" y="68" font-family="Arial, sans-serif" font-size="12" fill="#64748b">
+        • Similar to nearby kept frames (low information gain)
+      </text>
+      
+      <rect x="650" y="20" width="120" height="40" rx="5" fill="#f1f5f9"/>
+      <text x="710" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#475569">
+        ~45 frames
+      </text>
+      <text x="710" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#475569">
+        (75% removed)
+      </text>
+    </g>
+  </g>
+  
+  <!-- Bottom summary -->
+  <rect x="50" y="540" width="800" height="50" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="2"/>
+  <text x="450" y="562" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#78350f" font-weight="bold">
+    💡 Result: 256-512 informative tokens vs. 60 frames × 256 tokens = 15,360 total tokens
+  </text>
+  <text x="450" y="578" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#92400e">
+    30-60× memory reduction with minimal accuracy loss through intelligent frame selection
+  </text>
+</svg>
